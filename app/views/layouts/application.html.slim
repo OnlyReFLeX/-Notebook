@@ -11,7 +11,7 @@ html
         = link_to image_tag('logo.svg'), root_path, id: 'logo'
         nav
           - if user_signed_in?
-            = link_to 'Новая запись', new_note_path
+            = link_to 'Новая заметка', new_note_path
             = link_to 'Выйти', destroy_user_session_path, method: :delete
           - else
             = link_to 'Войти', new_user_session_path
