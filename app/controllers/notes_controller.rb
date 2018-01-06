@@ -1,5 +1,7 @@
 class NotesController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_note, only: [:show, :edit, :update, :destroy]
+  before_action :her_note, only: [:show, :edit, :update, :destroy]
   def index
     @notes = Note.where(user_id: current_user)
   end
@@ -45,6 +47,13 @@ class NotesController < ApplicationController
 
   def note_params
     params.require(:note).permit(:title, :content)
+  end
+
+  def her_note
+    unless current_user == @note.user
+      redirect_to notes_path
+      flash[:alert] = "У вас недостаточно прав"
+    end
   end
 
 end
