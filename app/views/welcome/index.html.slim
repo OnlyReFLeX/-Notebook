@@ -1,1 +1,29 @@
-h1 Welcome#index
+#banner
+  .banner_content
+    h1 Notebook
+    p Твоя онлайн записная книжка.
+    button= link_to 'Зарегистрироваться', new_user_registration_path
+#testimonial
+  .wrapper
+    p.quote "Величайшее приложение для записи заметок"
+    p.name - Ref
+#callouts
+  .callout_inner
+    .wrapper
+      .callout
+        h2 Быстрый
+        p Все заметки на виду, и вам не составить труда создать новую
+      .callout
+        h2 В любом месте
+        p Где вы не были вы всегда можете получить доступ к своим заметкам
+      .callout
+        h2 Красивый
+        p Мы создали для вас удобный и красивый для глаз дизайн
+
+#bottom_cta
+  .wrapper
+    h2  И на последок !
+    p Я хочу чтобы ты зарегистрировался.... Если нет, то я тебя найду !
+    button= link_to "Нажми на меняяя!!!", new_user_registration_path
+footer
+  p &copy; Ref
